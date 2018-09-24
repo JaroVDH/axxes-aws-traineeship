@@ -1,0 +1,15 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/default}">
+	<head></head>
+	<body>
+		<th:block layout:fragment="content">
+			<form action="/score/adjust" method="post" th:if="${name ne null and group ne null}">
+				<input type="hidden" name="name" th:value="${name}" />
+				<input type="hidden" name="group" th:value="${group}" />
+				Score for <th:block th:text="${name}"></th:block> in group <th:block th:text="${group}"></th:block>: <th:block th:text="${score}"></th:block>
+				<br/>
+				<input type="number" name="score" value="0" />
+				<button type="submit">Add to score</button>
+			</form>
+		</th:block>
+	</body>
+</html>

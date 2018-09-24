@@ -3,6 +3,18 @@
 	<body>
 		<th:block layout:fragment="content">
 			<h1>Hello World!</h1>
+
+			<form action="/score">
+				<input type="text" name="name" />
+				<input type="text" name="group" />
+				<button type="submit">Get score</button>
+			</form>
+			<form action="/score/add" method="post">
+				<input type="text" name="name" />
+				<input type="text" name="group" />
+				<input type="number" name="score" />
+				<button type="submit">Add a score</button>
+			</form>
 		</th:block>
 	</body>
 </html>
